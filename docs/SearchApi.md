@@ -140,7 +140,7 @@ It responds with an object with:
 {'took':10,'timed_out':false,'hits':{'total':2,'hits':[{'_id':'1','_score':1,'_source':{'gid':11}},{'_id':'2','_score':1,'_source':{'gid':12}}]}}   
 ```  
 
-Alternatively, you can use auxiliary objects(fulltextFilter or attrFilter) to build your search queries as it's shown in the example below. 
+Alternatively, you can use auxiliary objects(`fulltextFilter` or `attrFilter`) to build your search queries as it's shown in the example below. 
 For more information about the match query syntax and additional parameters that can be added to  request and response, please check: https://manual.manticoresearch.com/Searching/Full_text_matching/Basic_usage#HTTP. 
 
 ### Example
@@ -330,7 +330,7 @@ Debug.WriteLine(result);
 
 [[QueryFilter]](QueryFilter.md)
 ```csharp    
-//Setting the `fulltext_filter` property using different fulltext filter objects:
+//Setting the `FulltextFilter` property using different fulltext filter objects:
 
 //Using a QueryFilter object
 var searchRequest = new SearchRequest("movies");
@@ -389,7 +389,7 @@ Debug.WriteLine(result);
 
 [[EqualsFilter]](EqualsFilter.md)
 ```csharp
-//Setting the `attr_filter` property using different attribute filter objects:
+//Setting the `AttrFilter` property using different attribute filter objects:
 
 //Using an EqualsFilter object
 var searchRequest = new SearchRequest("movies");
@@ -459,7 +459,7 @@ Debug.WriteLine(result);
 
 [[BoolFilter]](BoolFilter.md)
 ```csharp
-//Setting the `attr_filter` property using a bool filter object:
+//Setting the `AttrFilter` property using a bool filter object:
 var searchRequest = new SearchRequest("movies");
 
 var boolFilter = new BoolFilter();
