@@ -22,6 +22,8 @@ Name | Type | Description | Notes
 **Profile** | **bool** |  | [optional] 
 **TrackScores** | **bool** |  | [optional] 
 
+[[Using in search requests]](SearchApi.md#SearchRequest)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
