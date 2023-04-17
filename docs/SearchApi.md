@@ -184,6 +184,8 @@ namespace Example
 ```
 
 ### SearchRequest
+
+[[Detailed information on search options]](https://manual.manticoresearch.com/Searching/Options#Search-options)
 ```csharp
 object query =  new { query_string="Star" };
 var searchRequest = new SearchRequest("movies", query);
@@ -202,6 +204,8 @@ Debug.WriteLine(result);
 ### SourceByRules
 
 [[SourceByRules]](SourceByRules.md)
+
+[[Detailed information on the `source` property]](https://manual.manticoresearch.com/Searching/Search_results#Source-selection)
 ```csharp
 //Setting the `Source` property with an auxiliary object:
 object query =  new { query_string="Star" };
@@ -232,6 +236,8 @@ Debug.WriteLine(result);
 
 [[SortOrder]](SortOrder.md)
 [[SortMVA]](SortMVA.md)
+
+[[Detailed information on sorting]](https://manual.manticoresearch.com/Searching/Sorting_and_ranking#HTTP)
 ```csharp
 //Setting the `Sort` property with an auxiliary object:
 object query =  new { query_string="Star" };
@@ -245,10 +251,11 @@ searchRequest.Sort.Add(sort3);
 
 SearchResponse result = apiInstance.Search(searchRequest);
 Debug.WriteLine(result);
-//For detailed information on sorting see https://manual.manticoresearch.com/Searching/Sorting_and_ranking#HTTP
 ```
 
 ### Expressions
+
+[[Detailed information on expressions]](https://manual.manticoresearch.com/Searching/Expressions#Expressions-in-HTTP-JSON)
 ```csharp    
 //Setting the `expressions` property:
 object query =  new { query_string="Star" };
@@ -261,12 +268,13 @@ searchRequest.Expressions.Add( new Dictionary<string, string> { {"expr2", "max(y
 					        	
 SearchResponse result = apiInstance.Search(searchRequest);
 Debug.WriteLine(result);
-//For detailed information on expressions see https://manual.manticoresearch.com/Searching/Expressions#Expressions-in-HTTP-JSON
 ```
 
 ### Aggregation
 
 [[Aggregation]](Aggregation.md)
+
+[[Detailed information on aggregations](https://manual.manticoresearch.com/Searching/Faceted_search#Aggregations)
 ```csharp    
 //Setting the `aggs` property with an auxiliary object:
 object query =  new { query_string="Star" };
@@ -279,12 +287,13 @@ searchRequest.Aggs.Add(new Aggregation("agg2", "rating"));
 
 SearchResponse result = apiInstance.Search(searchRequest);
 Debug.WriteLine(result);
-//For detailed information on aggregations see https://manual.manticoresearch.com/Searching/Faceted_search#Aggregations
 ```
 
 ### Highlight
 
 [[Highlight]](Highlight.md)
+
+[[Detailed information on highlighting]](https://manual.manticoresearch.com/Searching/Highlighting#Highlighting)
 ```csharp
 //Settting the `highlight` property with an auxiliary object:
 object query =  new { query_string="Star" };
@@ -299,12 +308,13 @@ searchRequest.Highlight = highlight;
 
 SearchResponse result = apiInstance.Search(searchRequest);
 Debug.WriteLine(result);
-//For detailed information on highlighting see https://manual.manticoresearch.com/Searching/Highlighting#Highlighting
 ```
 
 #### HighlightField
 
 [[HighlightField]](HighlightField.md)
+
+[[Detailed information on highlighting]](https://manual.manticoresearch.com/Searching/Highlighting#Highlighting)
 ```csharp
 // settting `highlight.fields` property with an auxiliary HighlightField object
 object query =  new { query_string="Star" };
@@ -322,11 +332,12 @@ searchRequest.Highlight = highlight;
 
 SearchResponse result = apiInstance.Search(searchRequest);
 Debug.WriteLine(result);
-//For detailed information on highlighting see https://manual.manticoresearch.com/Searching/Highlighting#Highlighting
 ```
 
 ### FulltextFilter
 #### QueryFilter
+
+[[Detailed information on fulltext filters]](https://manual.manticoresearch.com/Searching/Full_text_matching/Basic_usage#HTTP)
 
 [[QueryFilter]](QueryFilter.md)
 ```csharp    
@@ -339,7 +350,6 @@ searchRequest.FulltextFilter = new QueryFilter("Star Trek 2");
 
 SearchResponse result = apiInstance.Search(searchRequest);
 Debug.WriteLine(result);
-//For detailed information on fulltext filters see https://manual.manticoresearch.com/Searching/Full_text_matching/Basic_usage#HTTP
 ```
 
 #### MatchFilter
@@ -353,7 +363,6 @@ searchRequest.FulltextFilter = new MatchFilter("Nemesis", "title");
 
 SearchResponse result = apiInstance.Search(searchRequest);
 Debug.WriteLine(result);
-//For detailed information on fulltext filters see https://manual.manticoresearch.com/Searching/Full_text_matching/Basic_usage#HTTP
 ```
 
 #### MatchPhraseFilter
@@ -367,7 +376,6 @@ searchRequest.FulltextFilter = new MatchPhraseFilter("Star Trek 2", "title");
 
 SearchResponse result = apiInstance.Search(searchRequest);
 Debug.WriteLine(result);
-//For detailed information on fulltext filters see https://manual.manticoresearch.com/Searching/Full_text_matching/Basic_usage#HTTP
 ```
 
 #### MatchOpFilter
@@ -381,13 +389,14 @@ searchRequest.FulltextFilter = new MatchOpFilter("Enterprise test", "title,plot"
 
 SearchResponse result = apiInstance.Search(searchRequest);
 Debug.WriteLine(result);
-//For detailed information on fulltext filters see https://manual.manticoresearch.com/Searching/Full_text_matching/Basic_usage#HTTP
 ```    
 
 ### AttrFilter
 #### EqualsFilter
 
 [[EqualsFilter]](EqualsFilter.md)
+
+[[Detailed information on equality filters]](https://manual.manticoresearch.com/Searching/Filters#Equality-filters)
 ```csharp
 //Setting the `AttrFilter` property using different attribute filter objects:
 
@@ -398,12 +407,13 @@ searchRequest.AttrFilter = new EqualsFilter("year", 2003);
 
 SearchResponse result = apiInstance.Search(searchRequest);
 Debug.WriteLine(result);
-//For detailed information on equality filters see https://manual.manticoresearch.com/Searching/Filters#Equality-filters
 ```
 
 #### InFilter
 
 [[InFilter]](InFilter.md)
+
+[[Detailed information on set filters]](https://manual.manticoresearch.com/Searching/Filters#Set-filters)
 ```csharp
 //Using InFilter object
 var searchRequest = new SearchRequest("movies");
@@ -415,12 +425,13 @@ searchRequest.AttrFilter = inFilter;
 
 SearchResponse result = apiInstance.Search(searchRequest);
 Debug.WriteLine(result);
-//For detailed information on set filters see https://manual.manticoresearch.com/Searching/Filters#Set-filters
 ```
 
 #### RangeFilter
 
 [[RangeFilter]](RangeFilter.md)
+
+[[Detailed information on range filters]](https://manual.manticoresearch.com/Searching/Filters#Range-filters)
 ```csharp
 //Using a RangeFilter object
 var searchRequest = new SearchRequest("movies");
@@ -432,12 +443,13 @@ searchRequest.AttrFilter = rangeFilter;
 
 SearchResponse result = apiInstance.Search(searchRequest);
 Debug.WriteLine(result);
-//For detailed information on range filters see https://manual.manticoresearch.com/Searching/Filters#Range-filters
 ```
 
 #### GeoDistanceFilter
 
 [[GeoDistanceFilter]](GeoDistanceFilter.md)
+
+[[Detailed information on geo distance filters]](https://manual.manticoresearch.com/Searching/Filters#Geo-distance-filters)
 ```csharp
 //Using a GeoDistanceFilter object
 var searchRequest = new SearchRequest("geo");
@@ -452,12 +464,13 @@ searchRequest.AttrFilter = geoFilter;
 
 SearchResponse result = apiInstance.Search(searchRequest);
 Debug.WriteLine(result);
-//For detailed information on geo distance filters see https://manual.manticoresearch.com/Searching/Filters#Geo-distance-filters	
 ```
 
 #### BoolFilter
 
 [[BoolFilter]](BoolFilter.md)
+
+[[Detailed information on Bool queries]](https://manual.manticoresearch.com/Searching/Filters#bool-query)
 ```csharp
 //Setting the `AttrFilter` property using a bool filter object:
 var searchRequest = new SearchRequest("movies");
@@ -489,7 +502,6 @@ searchRequest.AttrFilter = boolFilter;
 
 result = apiInstance.Search(searchRequest);
 Debug.WriteLine(result);
-//For detailed information on Bool queries see https://manual.manticoresearch.com/Searching/Filters#bool-query
 ```
 
 #### Using the SearchWithHttpInfo variant
